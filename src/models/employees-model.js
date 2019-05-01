@@ -13,7 +13,9 @@ const EmployeeSchema = new Schema({
   },
   address: {
     type: String,
-  }
+  },
+}, {
+  versionKey: false
 })
 
 export default EmployeeSchema;
