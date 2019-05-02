@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prestart": "mongorestore --collection employees --db register-employees --drop ./load/employees.bson",
-    "start": "nodemon src/index.js --exec babel-node --presets babel-preset-env",
+    "start": "node -r esm src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,13 +14,12 @@
   "dependencies": {
     "@hapi/joi": "^15.0.1",
     "body-parser": "^1.19.0",
-    "depcheck": "^0.7.2",
+    "esm": "^3.2.22",
     "express": "^4.16.4",
     "mongoose": "^5.5.5"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
     "nodemon": "^1.19.0"
   }
 }

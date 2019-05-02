@@ -1,5 +1,5 @@
 import {
-  addNewEmployee, getEmployees, getEmployee, updateEmployee, deleteEmployee,
+  addNewEmployee, getEmployees, updateEmployee, deleteEmployee,
   getCheck
 }
 from '../controllers/employee-controller'
