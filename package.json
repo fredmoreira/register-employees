@@ -4,6 +4,7 @@
   "description": "A simple API REST for experiencing API testing frameworks, but use in talks and conferences as well.",
   "main": "index.js",
   "scripts": {
+    "prestart": "mongorestore --collection employees --db register-employees --drop ./load/employees.bson",
     "start": "nodemon src/index.js --exec babel-node --presets babel-preset-env",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

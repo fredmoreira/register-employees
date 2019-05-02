@@ -7,7 +7,7 @@ import mongoose from 'mongoose'
 const app = express();
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/employees', {
+mongoose.connect('mongodb://localhost:27017/register-employees', {
   useNewUrlParser: true
 });
 

@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
-import employeeSchema from '../models/employees-model'
+import employees from '../models/employees-model'
 
-const Employee = mongoose.model('EmployeeSchema', employeeSchema)
+const Employee = mongoose.model('employees', employees)
 
 export function addNewEmployee(req, res) {
 
@@ -17,8 +17,10 @@ export function addNewEmployee(req, res) {
 export function getEmployees(req, res) {
   let params = (req.query ? req.query : {});
 
-  if (params.name === '') {
-    return res.sendStatus(400);
+  if (params.name === '' || params.address === '') {
+    return res.status(400).json({
+      message: 'Query String is empty!'
+    });
   }
 
   Employee.find(params, (error, employees) => {
@@ -29,18 +31,6 @@ export function getEmployees(req, res) {
       return res.sendStatus(404);
     }
     res.json(employees)
-  })
-}
-
-export function getEmployee(req, res) {
-  Employee.findById(req.params.id, (error, employee) => {
-    if (error) {
-      res.json(error)
-    }
-    if (!employee.length) {
-      return res.sendStatus(404);
-    }
-    res.json(employee)
   })
 }
 

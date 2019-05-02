@@ -13,7 +13,6 @@ const routes = (app) => {
     .post(addNewEmployee)
 
   app.route('/employees/:id')
-    .get(getEmployee)
     .put(updateEmployee)
     .delete(deleteEmployee)
 }

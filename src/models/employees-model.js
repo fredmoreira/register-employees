@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const EmployeeSchema = new Schema({
+const employees = new Schema({
   name: {
     type: String,
     required: 'Name is required'
@@ -18,4 +18,4 @@ const EmployeeSchema = new Schema({
   versionKey: false
 })
 
-export default EmployeeSchema;
+export default employees;
