@@ -5,6 +5,8 @@ const Employee = mongoose.model('employees', employees)
 
 export function addNewEmployee(req, res) {
 
+  let payload = req.body;
+  console.log(payload);
   let newEmployee = new Employee(req.body)
   newEmployee.save((error, employee) => {
     if (error) {

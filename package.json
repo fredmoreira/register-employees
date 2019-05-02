@@ -12,7 +12,9 @@
   "author": "Frederico Moreira",
   "license": "ISC",
   "dependencies": {
+    "@hapi/joi": "^15.0.1",
     "body-parser": "^1.19.0",
+    "depcheck": "^0.7.2",
     "express": "^4.16.4",
     "mongoose": "^5.5.5"
   },
