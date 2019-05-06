@@ -48,7 +48,7 @@ export function updateEmployee(req, res) {
     if (error) {
       res.json(error)
     }
-    res.json(employee)
+    res.sendStatus(204)
   })
 }
 
@@ -59,7 +59,7 @@ export function deleteEmployee(req, res) {
     if (error) {
       res.json(error)
     }
-    res.json(employee)
+    res.sendStatus(204)
   })
 }
 
