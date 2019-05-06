@@ -15,7 +15,7 @@ export function addNewEmployee(req, res) {
     if (error) {
       res.status(400).json(error.message)
     }
-    res.json(employee)
+    res.status(201).json(employee)
   })
 }
 
