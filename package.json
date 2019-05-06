@@ -17,9 +17,5 @@
     "esm": "^3.2.22",
     "express": "^4.16.4",
     "mongoose": "^5.5.5"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "nodemon": "^1.19.0"
   }
 }
