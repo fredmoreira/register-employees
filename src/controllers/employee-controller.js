@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
 import employees from '../models/employees-model'
+import validate from './validations'
 
 const Employee = mongoose.model('employees', employees)
 
@@ -7,10 +8,12 @@ export function addNewEmployee(req, res) {
 
   let payload = req.body;
   console.log(payload);
+  console.log(validate(payload));
+
   let newEmployee = new Employee(req.body)
   newEmployee.save((error, employee) => {
     if (error) {
-      res.status(400).json(error)
+      res.status(400).json(error.message)
     }
     res.json(employee)
   })
