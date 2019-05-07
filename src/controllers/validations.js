@@ -1,7 +1,7 @@
 import Joi from '@hapi/joi';
 
 const schema = Joi.object().keys({
-  name: Joi.string().alphanum().min(2).max(30).required().error(errors => {
+  name: Joi.string().min(2).max(30).required().error(errors => {
     return {
       message: 'name is required.'
     };
