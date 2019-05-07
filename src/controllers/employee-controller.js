@@ -27,7 +27,7 @@ export function addNewEmployee(req, res) {
 export function getEmployees(req, res) {
   let params = (req.query ? req.query : {});
 
-  if (params.name === '' || params.address === '') {
+  if (params.name === '' || params.address === '' || params.nif === '') {
     return res.status(400).json({
       message: 'Query String is empty!'
     });
