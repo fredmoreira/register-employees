@@ -12,6 +12,6 @@ const schema = Joi.object().keys({
         message: 'nif is required.'
       };
     }),
-  address: Joi.string().alphanum().min(2).max(30)
+  address: Joi.string().min(2).max(30)
 });
 export default schema;
