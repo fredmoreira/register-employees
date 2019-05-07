@@ -1,22 +1,27 @@
 import mongoose from 'mongoose'
 import employees from '../models/employees-model'
-import validate from './validations'
+import schema from './validations'
+import Joi from '@hapi/joi'
 
 const Employee = mongoose.model('employees', employees)
 
 export function addNewEmployee(req, res) {
-
-  let payload = req.body;
-  console.log(payload);
-  console.log(validate(payload));
-
-  let newEmployee = new Employee(req.body)
-  newEmployee.save((error, employee) => {
-    if (error) {
-      res.status(400).json(error.message)
-    }
-    res.status(201).json(employee)
-  })
+  let employee = req.body;
+  schema.validate(employee, {
+      abortEarly: false
+    })
+    .then(employee => {
+      let newEmployee = new Employee(req.body)
+      newEmployee.save((error, employee) => {
+        if (error) {
+          res.status(400).json('Mongo is down')
+        }
+        res.status(201).json(employee)
+      })
+    })
+    .catch(error => {
+      res.status(400).json(error.details[0].message);
+    });
 }
 
 export function getEmployees(req, res) {
