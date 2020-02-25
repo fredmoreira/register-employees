@@ -1,20 +1,23 @@
 import {
-  addNewEmployee, getEmployees, updateEmployee, deleteEmployee,
-  getCheck
-}
-from '../controllers/employee-controller'
+  addNewEmployee,
+  getEmployees,
+  updateEmployee,
+  deleteEmployee,
+  getCheck,
+} from '../controllers/employee-controller';
 
 const routes = (app) => {
-  app.route('/')
-    .get(getCheck)
+  app.route('/').get(getCheck);
 
-  app.route('/employees')
+  app
+    .route('/employees')
     .get(getEmployees)
-    .post(addNewEmployee)
+    .post(addNewEmployee);
 
-  app.route('/employees/:id')
+  app
+    .route('/employees/:id')
     .put(updateEmployee)
-    .delete(deleteEmployee)
-}
+    .delete(deleteEmployee);
+};
 
 export default routes;
