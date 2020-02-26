@@ -21,4 +21,4 @@ jobs:
             - ./node_modules
       - run:
           name: lint-code
-          command: npm run code:format
+          command: npm run code:check
