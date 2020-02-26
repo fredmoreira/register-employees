@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/register-employees
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:10.15.3
       - image: mongo:4.0.3
     steps:
       - checkout
@@ -21,5 +21,4 @@ jobs:
             - ./node_modules
       - run:
           name: lint-code
-          command: npm run code:format      
-     
+          command: npm run code:check
