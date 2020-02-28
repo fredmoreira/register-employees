@@ -4,7 +4,6 @@ jobs:
     working_directory: ~/register-employees
     docker:
       - image: circleci/node:10.15.3
-      - image: mongo:4.0.3
     steps:
       - checkout
       - run:
@@ -22,6 +21,12 @@ jobs:
       - run:
           name: lint-code
           command: npm run code:check
+  test:
+    docker:
+      - image: circleci/node:10.15.3
+      - image: mongo:4.0.3
+    steps:
+      - checkout       
       - run:
           name: run-test
           command: npm test    

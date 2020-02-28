@@ -5,9 +5,9 @@ import mongoose from 'mongoose';
 import database from '../src/commons/db/data-base';
 import api from '../src/index';
 
-describe('Test GET API PhoneBook', () => {
+describe('Integration Test: GET - API Register-Employees', () => {
   const statusOk = 200;
-  it('test contacts', () => {
+  it('should return an employee tester porto meetup', () => {
     request(api)
       .get('/employees/')
       .send()

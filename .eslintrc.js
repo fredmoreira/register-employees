@@ -7,7 +7,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'no-console': 'off',
     'no-magic-numbers': [
-      'error',
+      'off',
       {
         ignore: [0, 1080, 1920],
         ignoreArrayIndexes: true,
