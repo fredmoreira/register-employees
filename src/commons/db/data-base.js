@@ -6,6 +6,7 @@ const config = {
   uri: 'mongodb://localhost:27017/register-employees',
   options: {
     useNewUrlParser: true,
+    useUnifiedTopology: true,
   },
 };
 

@@ -5,6 +5,7 @@
 import mongoose from 'mongoose';
 import employees from '../models/employees-model';
 import schema from './validations';
+import database from '../commons/db/data-base';
 
 const Employee = mongoose.model('employees', employees);
 
@@ -15,6 +16,7 @@ export function addNewEmployee(req, res) {
       abortEarly: false,
     })
     .then((employee) => {
+      database.connect();
       const newEmployee = new Employee(req.body);
       newEmployee.save((error, employee) => {
         if (error) {
@@ -36,7 +38,7 @@ export function getEmployees(req, res) {
       message: 'Query String is empty!',
     });
   }
-
+  database.connect();
   Employee.find(params, (error, employees) => {
     if (error) {
       res.json(error);
@@ -49,6 +51,7 @@ export function getEmployees(req, res) {
 }
 
 export function updateEmployee(req, res) {
+  database.connect();
   Employee.findOneAndUpdate(
     {
       _id: req.params.id,
@@ -67,6 +70,7 @@ export function updateEmployee(req, res) {
 }
 
 export function deleteEmployee(req, res) {
+  database.connect();
   Employee.remove(
     {
       _id: req.params.id,
