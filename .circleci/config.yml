@@ -22,3 +22,6 @@ jobs:
       - run:
           name: lint-code
           command: npm run code:check
+      - run:
+          name: run-test
+          command: npm test    
