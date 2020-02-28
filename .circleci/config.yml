@@ -29,4 +29,15 @@ jobs:
       - checkout       
       - run:
           name: run-test
-          command: npm test    
+          command: npm test
+workflows:
+ version: 2
+ build_and_test:
+   jobs:
+     - build
+     - test:
+         requires:
+           - build
+         filters:
+           branches:
+             only: master         
