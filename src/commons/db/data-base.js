@@ -11,7 +11,7 @@ const config = {
 };
 
 mongoose.connection.on('open', () => {
-  console.log('Successfully connected to database.');
+  // console.info('Successfully connected to database.');
 });
 
 mongoose.connection.on('error', () => {

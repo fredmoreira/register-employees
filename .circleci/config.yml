@@ -1,4 +1,5 @@
 version: 2
+build-and-test:
 jobs:
   build:
     working_directory: ~/register-employees
