@@ -10,7 +10,7 @@ describe('Integration Test: GET - API Register-Employees', () => {
   const statusNotFound = 404;
   it('should return an employee tester porto meetup', (done) => {
     request(api)
-      .get('/employees/')
+      .get('http://localhost:5000/employees')
       .end((err, res) => {
         assert.isNull(err);
         console.log(res);
