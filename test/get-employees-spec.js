@@ -13,6 +13,7 @@ describe('Integration Test: GET - API Register-Employees', () => {
       .get('/employees/')
       .end((err, res) => {
         assert.isNull(err);
+        console.log(res);
         assert.equal(res.status, statusOk);
         assert.equal(res.body[0].name, 'TesterPortoMeetup');
         assert.equal(res.body[0].nif, '999888777');
