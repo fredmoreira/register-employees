@@ -11,7 +11,6 @@ describe('Integration Test: GET - API Register-Employees', () => {
   it('should return an employee tester porto meetup', (done) => {
     request(api)
       .get('/employees')
-      .send()
       .end((err, res) => {
         assert.isNull(err);
         assert.equal(res.status, statusOk);
@@ -24,7 +23,6 @@ describe('Integration Test: GET - API Register-Employees', () => {
   it('should return an employee tester porto meetup filtered by name', (done) => {
     request(api)
       .get('/employees?name=TesterPortoMeetup')
-      .send()
       .end((err, res) => {
         assert.isNull(err);
         assert.equal(res.status, statusOk);
