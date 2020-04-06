@@ -2,6 +2,7 @@
 
 ## Register-Employees
 A simple API REST for experiencing API testing frameworks, but use in talks and conferences as well.
+It was created for https://speakerdeck.com/fredmoreira/because-every-qa-should-know-api-testing
 
 ## Requirements
 
@@ -16,7 +17,7 @@ It follows one step by step showing how to get the API running.
 ### Clone repository
 
 ```bash
-git clone https://github.com/fredmoreira/phone-book
+git clone https://github.com/fredmoreira/register-employees.git
 ```
 
 ### Install 
