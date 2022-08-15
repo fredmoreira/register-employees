@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/register-employees
     docker:
-      - image: circleci/node:10.15.3
+      - image: circleci/node:18.0
       - image: mongo:4.0.3
     steps:
       - checkout
