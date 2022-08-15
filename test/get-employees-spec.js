@@ -11,7 +11,7 @@ describe('Integration Test: GET - API Register-Employees', () => {
       .get('/employees')
       .end((err, res) => {
         assert.isNull(err);
-        assert.equal(res.status, statusOk);
+        assert.equal(res.status, statusNotFound);
         done();
       });
   });
